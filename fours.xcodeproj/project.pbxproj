@@ -15,7 +15,6 @@
 		522C775122B0000700CC3EFE /* placesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522C775022B0000700CC3EFE /* placesVC.swift */; };
 		522C775522B0054800CC3EFE /* venuesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522C775422B0054800CC3EFE /* venuesTableViewCell.swift */; };
 		522C775722B0067F00CC3EFE /* venuesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522C775622B0067F00CC3EFE /* venuesModel.swift */; };
-		522C777B22B00DD200CC3EFE /* detailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522C777A22B00DD200CC3EFE /* detailsVC.swift */; };
 		522C777D22B0110900CC3EFE /* tipsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522C777C22B0110900CC3EFE /* tipsTableViewCell.swift */; };
 		522C777F22B02D8100CC3EFE /* globalVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522C777E22B02D8100CC3EFE /* globalVariables.swift */; };
 		972182F7A3D116A5C10D1A65 /* Pods_fours.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDEAE8FCB82A9D7B66378428 /* Pods_fours.framework */; };
@@ -34,7 +33,6 @@
 		522C775022B0000700CC3EFE /* placesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = placesVC.swift; sourceTree = "<group>"; };
 		522C775422B0054800CC3EFE /* venuesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = venuesTableViewCell.swift; path = ../venuesTableViewCell.swift; sourceTree = "<group>"; };
 		522C775622B0067F00CC3EFE /* venuesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = venuesModel.swift; sourceTree = "<group>"; };
-		522C777A22B00DD200CC3EFE /* detailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailsVC.swift; sourceTree = "<group>"; };
 		522C777C22B0110900CC3EFE /* tipsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tipsTableViewCell.swift; sourceTree = "<group>"; };
 		522C777E22B02D8100CC3EFE /* globalVariables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = globalVariables.swift; sourceTree = "<group>"; };
 		DDEAE8FCB82A9D7B66378428 /* Pods_fours.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_fours.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -77,7 +75,6 @@
 				522C773C22AFF05D00CC3EFE /* Main.storyboard */,
 				522C773A22AFF05D00CC3EFE /* mainPageVC.swift */,
 				522C775022B0000700CC3EFE /* placesVC.swift */,
-				522C777A22B00DD200CC3EFE /* detailsVC.swift */,
 				522C777E22B02D8100CC3EFE /* globalVariables.swift */,
 				522C775622B0067F00CC3EFE /* venuesModel.swift */,
 				522C777C22B0110900CC3EFE /* tipsTableViewCell.swift */,
@@ -222,7 +219,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				522C773B22AFF05D00CC3EFE /* mainPageVC.swift in Sources */,
-				522C777B22B00DD200CC3EFE /* detailsVC.swift in Sources */,
 				522C777F22B02D8100CC3EFE /* globalVariables.swift in Sources */,
 				522C773922AFF05D00CC3EFE /* AppDelegate.swift in Sources */,
 				522C777D22B0110900CC3EFE /* tipsTableViewCell.swift in Sources */,

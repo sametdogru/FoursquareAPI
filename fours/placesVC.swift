@@ -69,7 +69,6 @@ class placesVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MK
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //performSegue(withIdentifier: "fromPlacesVCtodetailsVC", sender: indexPath.row)
         viewPopUp.isHidden =  false
         self.choosePlace = mekanArray[indexPath.row]
         nameLabel.text = choosePlace?.name
