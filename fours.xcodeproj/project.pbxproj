@@ -31,7 +31,7 @@
 		522C774222AFF05E00CC3EFE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		522C774422AFF05E00CC3EFE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		522C775022B0000700CC3EFE /* placesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = placesVC.swift; sourceTree = "<group>"; };
-		522C775422B0054800CC3EFE /* venuesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = venuesTableViewCell.swift; path = ../venuesTableViewCell.swift; sourceTree = "<group>"; };
+		522C775422B0054800CC3EFE /* venuesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = venuesTableViewCell.swift; sourceTree = "<group>"; };
 		522C775622B0067F00CC3EFE /* venuesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = venuesModel.swift; sourceTree = "<group>"; };
 		522C777C22B0110900CC3EFE /* tipsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tipsTableViewCell.swift; sourceTree = "<group>"; };
 		522C777E22B02D8100CC3EFE /* globalVariables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = globalVariables.swift; sourceTree = "<group>"; };
@@ -72,18 +72,42 @@
 			isa = PBXGroup;
 			children = (
 				522C773822AFF05D00CC3EFE /* AppDelegate.swift */,
-				522C773C22AFF05D00CC3EFE /* Main.storyboard */,
-				522C773A22AFF05D00CC3EFE /* mainPageVC.swift */,
-				522C775022B0000700CC3EFE /* placesVC.swift */,
-				522C777E22B02D8100CC3EFE /* globalVariables.swift */,
-				522C775622B0067F00CC3EFE /* venuesModel.swift */,
-				522C777C22B0110900CC3EFE /* tipsTableViewCell.swift */,
-				522C775422B0054800CC3EFE /* venuesTableViewCell.swift */,
-				522C773F22AFF05E00CC3EFE /* Assets.xcassets */,
 				522C774122AFF05E00CC3EFE /* LaunchScreen.storyboard */,
+				522C773C22AFF05D00CC3EFE /* Main.storyboard */,
+				528CDC9522B64E6900924EDA /* ViewControllers */,
+				528CDC9622B64E7B00924EDA /* Cells */,
+				528CDC9722B64E9600924EDA /* Model */,
+				522C777E22B02D8100CC3EFE /* globalVariables.swift */,
+				522C773F22AFF05E00CC3EFE /* Assets.xcassets */,
 				522C774422AFF05E00CC3EFE /* Info.plist */,
 			);
 			path = fours;
+			sourceTree = "<group>";
+		};
+		528CDC9522B64E6900924EDA /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				522C773A22AFF05D00CC3EFE /* mainPageVC.swift */,
+				522C775022B0000700CC3EFE /* placesVC.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		528CDC9622B64E7B00924EDA /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				522C777C22B0110900CC3EFE /* tipsTableViewCell.swift */,
+				522C775422B0054800CC3EFE /* venuesTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		528CDC9722B64E9600924EDA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				522C775622B0067F00CC3EFE /* venuesModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		934EB986470294CCE6035115 /* Pods */ = {
