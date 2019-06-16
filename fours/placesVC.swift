@@ -50,7 +50,6 @@ class placesVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MK
         viewPopUp.layer.shadowColor = UIColor.black.cgColor
         viewPopUp.layer.shadowRadius = 8.0
         viewPopUp.layer.shadowOpacity = 0.7
-        
     }
  
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -105,7 +104,6 @@ class placesVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MK
                 let responseModel = jsonDict["response"] as! NSDictionary;
                 let tipsModel = responseModel["tips"] as! NSDictionary;
                 let tipsItemsArray = tipsModel["items"] as! NSArray;
-              //  let count :Int = tipsModel["count"] as! Int;
                 for object in tipsItemsArray {
                     let model = object as! NSDictionary;
                     let tipsText = (model["text"] as! String)
