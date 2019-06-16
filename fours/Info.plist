@@ -26,8 +26,10 @@
 	<string>Main</string>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>show</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>show</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>show location</string>
+	<string>show</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

@@ -14,7 +14,7 @@ import SDWebImage
 import MapKit
 import CoreLocation
 
-class placesVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MKMapViewDelegate,CLLocationManagerDelegate{
+class placesVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MKMapViewDelegate,CLLocationManagerDelegate {
    
     @IBOutlet weak var listTableView: UITableView!
     @IBOutlet weak var viewPopUp: UIView!
@@ -29,7 +29,7 @@ class placesVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MK
     var manager = CLLocationManager()
     var requestCLLocation = CLLocation()
     
-    var choosePlace: venuesModel? = nil
+    var choosePlace: venuesModel!
     var mekanArray: [venuesModel] = []
     var tipsList : [String] = []
     
@@ -69,14 +69,16 @@ class placesVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MK
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         viewPopUp.isHidden =  false
+        print(mekanArray[indexPath.row])
+        
         self.choosePlace = mekanArray[indexPath.row]
-        nameLabel.text = choosePlace?.name
+        nameLabel.text = choosePlace.name
         getPhotosOfVenues()
     }
     
     func getPhotosOfVenues() {
         MBProgressHUD.showAdded(to: self.view, animated: true);
-        let url : String = "https://api.foursquare.com/v2/venues/"+choosePlace!.id+"/photos?client_id=\(clientID)&client_secret=\(clientSecret)&v=20190521"
+        let url : String = "https://api.foursquare.com/v2/venues/"+choosePlace.id+"/photos?client_id=\(clientID)&client_secret=\(clientSecret)&v=20190521"
         AF.request(url).responseJSON { response in
             if let json = response.value {
                 let jsonDict = json as! NSDictionary;
@@ -96,7 +98,7 @@ class placesVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MK
     
     func getListOfTips() {
         MBProgressHUD.showAdded(to: self.view, animated: true);
-        let url : String = "https://api.foursquare.com/v2/venues/"+choosePlace!.id+"/tips?client_id=\(clientID)&client_secret=\(clientSecret)&v=20190521"
+        let url : String = "https://api.foursquare.com/v2/venues/"+choosePlace.id+"/tips?client_id=\(clientID)&client_secret=\(clientSecret)&v=20190521"
         print(url)
         AF.request(url).responseJSON { response in
             if let json = response.value {
@@ -139,8 +141,8 @@ class placesVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MK
     }
     
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
-        if self.choosePlace!.lat != 0 && self.choosePlace!.lng != 0 {
-            self.requestCLLocation = CLLocation(latitude: self.choosePlace!.lat, longitude: self.choosePlace!.lng)
+        if self.choosePlace.lat != 0 && self.choosePlace.lng != 0 {
+            self.requestCLLocation = CLLocation(latitude: self.choosePlace.lat, longitude: self.choosePlace.lng)
         }
         CLGeocoder().reverseGeocodeLocation(requestCLLocation) { (placemarks, error) in
             if let placesmark = placemarks {
@@ -157,14 +159,14 @@ class placesVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MK
     
     func popUp() {
         manager.startUpdatingLocation()
-        UIView.animate(withDuration: 0.7, delay: 0, options: .curveLinear, animations: {
+        UIView.animate(withDuration: 0.5, delay: 0, options: .curveLinear, animations: {
             self.viewPopUp.frame = CGRect(x: 29, y: 85, width: self.viewPopUp.frame.width, height: self.viewPopUp.frame.height)
                 self.mapViewAnnotationSet()
         }, completion: nil)
     }
     
     func mapViewAnnotationSet() {
-        let location = CLLocationCoordinate2D(latitude: self.choosePlace!.lat, longitude: self.choosePlace!.lng)
+        let location = CLLocationCoordinate2D(latitude: self.choosePlace.lat, longitude: self.choosePlace.lng)
         let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
         let region = MKCoordinateRegion(center: location, span: span)
         self.mapView.setRegion(region, animated: true)
@@ -176,11 +178,11 @@ class placesVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MK
     
     @IBAction func closeButton(_ sender: Any) {
         
-        UIView.animate(withDuration: 0.7, delay: 0, options: .curveEaseOut, animations: {
+        UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseOut, animations: {
             self.viewPopUp.frame = CGRect(x: 29, y: 1000, width: self.viewPopUp.frame.width, height: self.viewPopUp.frame.height)
         }, completion: { finished in
             self.viewPopUp.isHidden = true
-            self.choosePlace = nil
+            self.tipsList.removeAll()
             if let annotations = self.mapView?.annotations {
                 for _annotation in annotations {
                     if let annotation = _annotation as? MKAnnotation

@@ -11,7 +11,7 @@ import Alamofire
 import MBProgressHUD
 import CoreLocation
 
-class mainPageVC: UIViewController, UITextFieldDelegate{
+class mainPageVC: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var placeTypeText: UITextField!
     @IBOutlet weak var locationText: UITextField!
